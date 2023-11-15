@@ -8,26 +8,118 @@ This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 
 class Alchemist():
-    pass
+    def __init__(self):
+        pass
+
+    def getLaboratory(self):
+        pass
+
+    def getRecipes(self):
+        pass
+
+    def mixPotion(self):
+        pass
+
+    def drinkPotion(self):
+        pass
+
+    def collectReagent(self):
+        pass
+
+    def defineReagents(self):
+        pass
 
 class Laboratory():
-    pass
+    def __init__(self):
+        pass
+
+    def mixPotion(self):
+        pass
+
+    def addReagent(self):
+
 
 class Potion():
-    pass
+    def __init__(self):
+        pass
+
+    def calculateBoost(self):
+        pass
+
+    def getName(self):
+        pass
+
+    def getStat(self):
+        pass
+
+    def getBoost(self):
+        pass
+
+    def setBoost(self):
+        pass
 
 class Reagent():
-    pass
+    def __init__(self):
+        pass
+
+    def refine(self):
+        pass
+
+    def getName(self):
+        pass
+
+    def setPotency(self):
+        pass
+
 
 class SuperPotion(Potion):
-    pass
+    def __init__(self):
+        #super.Potion()
+            pass
+
+    def calculateBoost(self):
+        pass
+
+    def getHerb(self):
+        pass
+
+    def getCatalyst(self):
+        pass
 
 class ExtremePotion(Potion):
-    pass
+    def __init__(self):
+        #super.Potion()
+            pass
+
+    def calculateBoost(self):
+        pass
+
+    def getReagent(self):
+        pass
+
+    def getPotion(self):
+        pass
 
 class Herb(Reagent):
-    pass
+    def __init__(self):
+        #super.Reagent
+            pass
+
+    def refine(self):
+        pass
+    def getGrimy(self):
+        pass
+    def setGrimy(self):
+        pass
+
 
 class Catalyst(Reagent):
-    pass
+    def __init__(self):
+        #super.Reagent
+            pass
 
+    def refine(self):
+        pass
+
+    def getQuality(self):
+        pass
