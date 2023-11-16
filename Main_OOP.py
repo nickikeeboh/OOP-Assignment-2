@@ -74,7 +74,7 @@ class Reagent():
 
 class SuperPotion(Potion):
     def __init__(self):
-        #super.Potion()
+        super().__init__()
             pass
 
     def calculateBoost(self):
@@ -88,7 +88,7 @@ class SuperPotion(Potion):
 
 class ExtremePotion(Potion):
     def __init__(self):
-        #super.Potion()
+        super().__init__()
             pass
 
     def calculateBoost(self):
@@ -102,20 +102,22 @@ class ExtremePotion(Potion):
 
 class Herb(Reagent):
     def __init__(self):
-        #super.Reagent
+        super().__init__()
             pass
 
     def refine(self):
         pass
+        
     def getGrimy(self):
         pass
+        
     def setGrimy(self):
         pass
 
 
 class Catalyst(Reagent):
     def __init__(self):
-        #super.Reagent
+        super().__init__()
             pass
 
     def refine(self):
