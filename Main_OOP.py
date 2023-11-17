@@ -28,7 +28,25 @@ class Alchemist():
         return self.laboratory
 
     def getRecipes(self):
-        pass
+        # Creating a dictionary for super potions
+        super_potions = {
+            "Super Attack": ["Irit", "Eye of Newt"],
+            "Super Strength": ["Kwuarm", "Limpwurt Root"],
+            "Super Defence": ["Cadantine", "White Berries"],
+            "Super Magic": ["Lantadyme", "Potato Cactus"],
+            "Super Ranging": ["Dwarf Weed", "Wine of Zamorak"],
+            "Super Necromancy": ["Arbuck", "Blood of Orcus"]
+        }
+
+        # Creating a dictionary for extreme potions
+        extremePotions = {
+            "Extreme Attack": ["Avantoe", "Super Attack"],
+            "Extreme Strength": ["Dwarf Weed", "Super Strength"],
+            "Extreme Defence": ["Lantadyme", "Super Defence"],
+            "Extreme Magic": ["Ground Mud Rune", "Super Magic"],
+            "Extreme Ranging": ["Grenwall Spike", "Super Ranging"],
+            "Extreme Necromancy": ["Ground Miasma Rune", "Super Necromancy"]
+        }
 
     # Implementing an if statement to make sure that potions not with no recipe can not be made
     def mixPotion(self, recipe):
