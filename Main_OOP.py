@@ -74,24 +74,43 @@ class Alchemist():
         def drinkPotion(potion):
             # check if it is an instance of the potion class and pass one parameter potion
             if isinstance(potion, Potion):
-                #
+                #if it is an instance of the potion class then getName and getBoost are called
                 return f"Potion: {potion.getName()} Gives: {potion.getBoost()} boost."
             else:
                 return "Invalid potion."
 
-    def collectReagent(self):
-        pass
+    def collectReagent(self, reagent, amount):
+        # if the instance is in Reagent and the amount is greater then zero
+        if isinstance(reagent, Reagent) and isinstance(amount, int) and amount > 0:
+            # Perform operations on the Reagent object based on the amount
+            reagent.setAmount(amount)
 
-    def defineReagents(self):
-        pass
+            # this adds the reagent to the lab
+            self.laboratory.addReagent(reagent, amount)
+            return f"{amount} of {reagent.getName()} reagent have been added to the laboratory."
+        else:
+            return "Invalid reagent or amount."
+
+
+    def refineReagents(self, reagent):
+        self.laboratory.refineReagents()
+        return reagent
 
 
 class Laboratory():
     def __init__(self):
-        pass
+        # storing potions and reagents
+        self.reagents = []
+        self.potions = []
 
-    def mixPotion(self):
-        pass
+    def mixPotion(self, alchemist, recipe):
+        # Assuming mixPotion function in Laboratory requires Alchemist object and a recipe
+        if recipe in alchemist.getRecipes():
+            potion = alchemist.mixPotion(recipe)
+            self.potions.append(potion)
+            return f"{recipe} has been Mixed."
+        else:
+            return "Mix not found"
 
     def addReagent(self):
         pass
