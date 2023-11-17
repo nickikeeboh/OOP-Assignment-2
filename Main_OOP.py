@@ -112,8 +112,10 @@ class Laboratory():
         else:
             return "Mix not found"
 
-    def addReagent(self):
-        pass
+    def addReagent(self, reagent, amount):
+        for reagents in range(amount):
+            self.reagents.append(reagent)
+        return f"{amount} of {reagent.getName()} have been successfully added to the lab."
 
 
 class Potion():
@@ -131,10 +133,10 @@ class Potion():
         pass
 
     def getBoost(self):
-        pass
+        return self.boost
 
-    def setBoost(self):
-        pass
+    def setBoost(self, boostNew):
+        self.boost = boostNew
 
 
 class Reagent():
