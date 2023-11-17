@@ -10,7 +10,15 @@ This is my own work as defined by the University's Academic Misconduct Policy.
 class Alchemist():
     # Initiating Alchemist Class Objects
     def __init__(self):
-        pass
+        self.attack = 0
+        self.strength = 0
+        self.defense = 0
+        self.magic = 0
+        self.necromancy = 0
+        self. ranged = 0
+        self.recipes = []
+        self.laboratory = Laboratory()
+
     # defining alchemist Class Methods
     def getLaboratory(self):
         pass
@@ -18,8 +26,13 @@ class Alchemist():
     def getRecipes(self):
         pass
 
-    def mixPotion(self):
-        pass
+# Implementing an if statement to make sure that potions not with no recipe can not be made 
+    def mixPotion(self, recipe):
+        if recipe in self.recipes:
+            potion = self.laboratory.mixPotion(recipe)
+            return potion
+        else:
+            return("Recipe not found")
 
     def drinkPotion(self):
         pass
@@ -38,9 +51,11 @@ class Laboratory():
         pass
 
     def addReagent(self):
+        pass
 
 
 class Potion():
+
     def __init__(self):
         pass
 
@@ -76,7 +91,7 @@ class Reagent():
 class SuperPotion(Potion):
     def __init__(self):
         super().__init__()
-            pass
+        pass
 
     def calculateBoost(self):
         pass
@@ -90,7 +105,7 @@ class SuperPotion(Potion):
 class ExtremePotion(Potion):
     def __init__(self):
         super().__init__()
-            pass
+        pass
 
     def calculateBoost(self):
         pass
@@ -104,7 +119,7 @@ class ExtremePotion(Potion):
 class Herb(Reagent):
     def __init__(self):
         super().__init__()
-            pass
+        pass
 
     def refine(self):
         pass
@@ -119,7 +134,7 @@ class Herb(Reagent):
 class Catalyst(Reagent):
     def __init__(self):
         super().__init__()
-            pass
+        pass
 
     def refine(self):
         pass
