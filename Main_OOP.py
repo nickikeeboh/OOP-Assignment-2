@@ -21,8 +21,11 @@ class Alchemist():
         self.laboratory = Laboratory()
 
     # defining alchemist Class Methods
+    def setLaboratory(self, laboratory):
+        self.laboratory = laboratory
+
     def getLaboratory(self):
-        pass
+        return self.laboratory
 
     def getRecipes(self):
         pass
@@ -117,9 +120,13 @@ class Reagent():
             return catalysts[catalystType][0]
         else:
             return "Not a known Reagent"
-        
-    def setPotency(self):
-        pass
+
+    def setPotency(self, potencyVal):
+        if isinstance(potencyVal, (int, float)):
+            self.__potency = potencyVal
+        else:
+            raise ValueError("Potency must be a number value")
+
 
 
 class SuperPotion(Potion):
