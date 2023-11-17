@@ -406,19 +406,28 @@ class SuperPotion(Potion):
 
 
 class ExtremePotion(Potion):
-    def __init__(self):
-        #initialise the values from potion
-        super().__init__()
-        pass
+    class ExtremePotion(Potion):
+        def __init__(self, name, stat, boost):
+            super().__init__(name, stat, boost)
+            self.reagent = None
 
-    def calculateBoost(self):
-        pass
+        def calculateBoost(self):
+            # Calculate the boost for the extreme potion
+            if self.reagent:
+                return (self.reagent.getPotency() * self.boost) * 3.0
+            else:
+                return "No reagent set for this potion."
 
-    def getReagent(self):
-        pass
+        def getReagent(self):
+            # Get the reagent associated with this extreme potion
+            return self.reagent
 
-    def getPotion(self):
-        pass
+        def setReagent(self, reagent):
+            # Set the reagent associated with this extreme potion
+            if isinstance(reagent, Reagent):
+                self.reagent = reagent
+            else:
+                raise ValueError("Invalid reagent type. Must be an instance of Reagent.")
 
 
 class Herb(Reagent):
@@ -435,11 +444,11 @@ class Herb(Reagent):
             return "Not a known herb."
 
     def getGrimy(self):
-        # Returns the status of the herb being grimy or clean
+        # Returns the status of the herb
         return self.grimy
 
     def setGrimy(self, status):
-        # Sets the status of the herb to grimy or clean
+        # Sets the status of the herb
         if isinstance(status, bool):
             self.grimy = status
         else:
@@ -449,7 +458,7 @@ class Herb(Reagent):
 
 class Catalyst(Reagent):
     def refine(self):
-        # If it is a catalyst and the potency is less than 8.9, increase it by 1.1
+        # If it is a catalyst and the potency is less than 8.9, increase it by 1.1 using standarad formula
         if self.name in self.catalysts:
             if self.potency < 8.9:
                 self.potency += 1.1
@@ -461,11 +470,11 @@ class Catalyst(Reagent):
             return "Not a known catalyst."
 
     def getQuality(self):
-        # Returns the quality of the catalyst
+        # Returns the quality
         return self.potency
 
     def setQuality(self, new_potency):
-        # Sets the quality of the catalyst
+        # Sets the catalyst quality
         if isinstance(new_potency, (int, float)):
             self.potency = new_potency
         else:
