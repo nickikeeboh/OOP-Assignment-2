@@ -87,7 +87,8 @@ class Reagent():
     def getName(self):
         pass
 
-    def getPotency(self, herb, catalysts):
+    def getPotency(self, herbType, catalystType):
+        # dictionary with all herb values
         herb = {"Airbuck": 2.6,
                 "Avantoe": 3.0,
                 "Cadantine": 1.5,
@@ -97,6 +98,7 @@ class Reagent():
                 "Lantadyme": 2.0,
                 "Torstol": 4.5,
                 }
+        # Dictionary for all catalysts and their given value as a tuple
         catalysts = {
             "Eye of Newt": (4.3, 1.0),
             "Limpwurt Root": (3.6, 1.7),
@@ -108,7 +110,14 @@ class Reagent():
             "Grenwall Spike": (6.3, 4.9),
             "Ground Miasma Rune": (3.3, 5.2)
         }
-
+        # Returns the specific reagent and their key value pair from the dictionary
+        if herbType in herb:
+            return herb[herbType]
+        elif catalystType in catalysts:
+            return catalysts[catalystType][0]
+        else:
+            return "Not a known Reagent"
+        
     def setPotency(self):
         pass
 
