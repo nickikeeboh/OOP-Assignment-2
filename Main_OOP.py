@@ -27,9 +27,9 @@ class Alchemist():
     def getLaboratory(self):
         return self.laboratory
 
-    def getRecipes(self):
+    def getRecipes(self, superPot, extremePot):
         # Creating a dictionary for super potions
-        super_potions = {
+        superPotions = {
             "Super Attack": ["Irit", "Eye of Newt"],
             "Super Strength": ["Kwuarm", "Limpwurt Root"],
             "Super Defence": ["Cadantine", "White Berries"],
@@ -48,16 +48,36 @@ class Alchemist():
             "Extreme Necromancy": ["Ground Miasma Rune", "Super Necromancy"]
         }
 
-    # Implementing an if statement to make sure that potions not with no recipe can not be made
+        if superPot in superPotions:
+            return superPotions[superPot]
+        elif extremePot in extremePotions:
+            return extremePotions[extremePot]
+        else:
+            return "Not a known Recipe"
+
+
+    def setRecipe(self, recipeSet):
+        if isinstance(recipeSet, (str)):
+            self.__recipeSet = recipeSet
+        else:
+            raise ValueError("Recipe must be a string value")
+
+    # Implementing an if statement setter method to make sure that potions not with no recipe can not be made
     def mixPotion(self, recipe):
         if recipe in self.recipes:
             potion = self.laboratory.mixPotion(recipe)
             return potion
         else:
-            return "Recipe not found"
+            return "Mix not found"
 
     def drinkPotion(self):
-        pass
+        def drinkPotion(potion):
+            # check if it is an instance of the potion class and pass one parameter potion
+            if isinstance(potion, Potion):
+                #
+                return f"Potion: {potion.getName()} Gives: {potion.getBoost()} boost."
+            else:
+                return "Invalid potion."
 
     def collectReagent(self):
         pass
