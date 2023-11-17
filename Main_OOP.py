@@ -8,9 +8,10 @@ This is my own work as defined by the University's Academic Misconduct Policy.
 '''
 
 class Alchemist():
+    # Initiating Alchemist Class Objects
     def __init__(self):
         pass
-
+    # defining alchemist Class Methods
     def getLaboratory(self):
         pass
 
@@ -107,10 +108,10 @@ class Herb(Reagent):
 
     def refine(self):
         pass
-        
+
     def getGrimy(self):
         pass
-        
+
     def setGrimy(self):
         pass
 
